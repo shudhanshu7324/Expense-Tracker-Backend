@@ -18,13 +18,14 @@ const expenseSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    userId:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"User",
-        required:true
-    }
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Expense", expenseSchema);
+const Expense = mongoose.model("Expense", expenseSchema);
+export default Expense;
