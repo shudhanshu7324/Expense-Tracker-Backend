@@ -4,12 +4,14 @@ import  connectDb  from "./db.js";
 import userRouter from './routes/user.route.js'
 import expenseRouter from './routes/expense.route.js'
 dotenv.config();
+import cors from 'cors'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(cors())
 
 app.get('/',(req,res) => {
     res.send("Expense Tracker Homepage")
