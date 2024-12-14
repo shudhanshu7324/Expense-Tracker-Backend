@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.get("/getExpense/:userId", isLoggedIn, getUserExpenses);
+router.get("/getExpense", isLoggedIn, getUserExpenses);
 router.post("/addExpense", isLoggedIn, addExpense);
 router.put("/updateExpense/:id", isLoggedIn, updateExpense);
 router.delete("/deleteExpense/:id", isLoggedIn, deleteExpense);

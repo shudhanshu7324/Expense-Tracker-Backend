@@ -6,7 +6,9 @@ export const getUserExpenses = async (req, res) => {
     // Retrieve the user ID from the decoded token
 
     // Fetch all expenses linked to this user ID
-    const userId = req.params.userId;
+    const userId = localStorage.getItem("userId");
+    // const userId = req.headers.userid;
+    // console.log(userId)
 
     const userExpenses = await Expense.find({userId});
 
